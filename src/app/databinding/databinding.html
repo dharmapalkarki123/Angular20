@@ -1,0 +1,73 @@
+<h1>Interpolation</h1>
+<!--<p>Used to show data from the component to HTML.</p>-->
+<table border="1" width="50%">
+  <tr>
+
+    <th>Name</th>
+    <th>Age</th>
+    <th>Grade</th>
+
+  </tr>
+
+  <tr>
+    <td>{{name}}</td>
+    <td>{{Age}}</td>
+    <td>{{grade}}</td>
+  </tr>
+
+ <tr>
+   <td>
+     <input type="text" value="{{courseName}}">
+   </td>
+
+
+
+ </tr>
+
+
+
+
+</table>
+
+
+<!-- Proberty Binding -->
+
+<!--Used to bind a property of an HTML element with a component variable.-->
+<table  border="2" width="50%">
+  <th>Property Binding</th>
+   <tr>
+     <input [type]="inputType"  [max]="maxLength" [min]="minChar">
+   </tr>
+     <tr>
+     <p [class]="myClassName">This is a paragraph with class</p>
+   </tr>
+
+</table>
+
+
+<!--Event Binding-->
+
+<!--Used to call a method in the component when something happens (like click).-->
+
+<h1>Event Binding</h1>
+
+<button (click)="showWelcomeMessage()">Signup</button>
+
+<button (click)="changeCourseName()">Change</button>
+
+
+<select (change)="onCityChange()">
+  <option value="">Kathmandu</option>
+  <option value="">Biratnaghar</option>
+  <option value="">Jhapa</option>
+  <option value="">Ithari</option>
+</select>
+
+<!--Two  way binding or NgModule binding-->
+<!--Used to bind input fields both ways:-->
+
+<h1>NgModule</h1>
+
+<input type="text" [(ngModel)]="courseName">
+
+
