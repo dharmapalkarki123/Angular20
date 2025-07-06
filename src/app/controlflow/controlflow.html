@@ -1,0 +1,118 @@
+<!--<table>-->
+
+<!--  <td>-->
+
+<!--    @if(isShow)-->
+<!--    {-->
+<!--      <p >This is angular Universe</p>-->
+<!--    }-->
+
+<!--  </td>-->
+
+<!--  <td>-->
+
+<!--    <button  (click)="ShowPage()">Show</button>-->
+
+<!--    <button (click)="hidePage()">Hide</button>-->
+
+
+
+<!--  </td>-->
+
+
+<!--  <td>-->
+
+<!--    @if(startingMonth=="Jan"){-->
+<!--      <span>January</span>-->
+
+<!--    }@else if(startingMonth=="feb"){-->
+<!--      <span>February</span>-->
+<!--    } @else if (startingMonth=="mar"){-->
+<!--      <span>March</span>-->
+<!--    } @else if (startingMonth=="apr"){-->
+<!--      <span>April</span>-->
+<!--    }@else{-->
+<!--      <span>Wrong Informaton</span>-->
+<!--    }-->
+
+<!--    <td>-->
+<!--  <input type="text" [(ngModel)]="startingMonth">-->
+
+<!--  </td>-->
+
+<!--  <td>-->
+<!--    <ul>-->
+<!--      @for(item of cityList; track $index){-->
+<!--        <li>{{item}}</li>-->
+<!--      }-->
+<!--    </ul>-->
+
+<!--  </td>-->
+
+<!--  <select name="" id="">-->
+<!--    @for(item of cityList; track $index){-->
+<!--      <option value=" ">{{item}}</option>-->
+
+
+<!--    }-->
+
+
+<!--  </select>-->
+
+
+
+
+
+<!--</table>-->
+
+<table border="2" width="60%" >
+
+  <thead>
+  <tr>
+
+    <th>SN</th>
+    <th>Student Name</th>
+    <th>City</th>
+    <th>status</th>
+  </tr>
+
+  </thead>
+
+  <tbody>
+
+    @for(item of studentList; track $index){
+
+  <tr>
+
+
+      <td>{{$index+1}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.city}}</td>
+
+
+      <td>
+        @if(item.isActive==true){
+          <h1>Active</h1>
+        }@else{
+          <h2>De-Active</h2>
+        }
+
+
+
+
+
+
+
+  </tr>
+
+    }
+  </tbody>
+
+
+
+
+
+
+</table>
+
+
