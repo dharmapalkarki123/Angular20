@@ -1,0 +1,32 @@
+
+<div class="row">
+  <div class="col-3">
+    <div class="p-3" [ngClass]="divClass1()">
+      Div-1  -{{divClass1()}}
+    </div>
+  </div>
+</div>
+
+<div class="clo -3">
+
+  <div class="p-3"  [ngStyle]="{'background-color':isDivGreen==true ? 'blue':'orange'}" >
+
+    Div-2
+
+
+
+
+  </div>
+
+</div>
+
+
+
+<div class="row">
+  <div class="col-3">
+    <button  class="btn btn-success"     (click)="bgClick('bg-success')">Green</button>
+    <button class="btn btn-danger"  (click)="bgClick('bg-danger')">Red</button>
+    <button class="btn btn-danger"  (click)="toggle()">Red</button>
+  </div>
+
+</div>
