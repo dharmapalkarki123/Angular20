@@ -1,4 +1,6 @@
+<div class="flex-column">
 
+</div>
 <div class="row">
   <div class="col-3">
     <div class="p-3" [ngClass]="divClass1()">
@@ -30,3 +32,51 @@
   </div>
 
 </div>
+
+
+
+<div class="col-3">
+  <div p-3>
+
+    First Name: {{firstName}}
+
+    Course Name:{{courseName}}
+
+  </div>
+
+  <div>
+    First Name:{{firstName|uppercase}}
+
+    Course Name:{{courseName|uppercase}}
+  </div>
+
+
+
+  <div>
+
+    Roll No: {{studentRoll|slice :0:6}}
+    <br>
+    Roll No: {{studentRoll|slice :6}}
+    <br>
+    Student Details:{{studentObj|json}}
+
+
+  </div>
+
+  <div class="col-3">
+    Date : {{currentDate}}
+    <br>
+    Date : {{currentDate|date:'dd-MMM-yy'}}
+    <br>
+    Date : {{currentDate|date:'dd-MM-yyy'}}
+    <br>
+    Date : {{currentDate|date:'dd-MMMM-yyyy'}}
+
+  </div>
+
+
+
+
+</div>
+
+
