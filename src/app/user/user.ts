@@ -15,11 +15,13 @@ export class User implements OnInit{
   userList: any[]=[]
 
   userObj={
-    "userId": 0,
-    "emailId": "",
-    "password": "",
-    "fullName": " ",
-    "mobileNo": " "
+
+    "id":0,
+
+    "name": "",
+    "age": "",
+    "prescription": " ",
+    "blood": " "
 
   }
 
@@ -30,14 +32,14 @@ export class User implements OnInit{
 
 
   getUsers(){
-    this.http.get('https://api.freeprojectapi.com/api/Survey/getAllUsers').subscribe((res:any)=>{
+    this.http.get('http://localhost:8086/api/v0/patients').subscribe((res:any)=>{
       this.userList=res;
     })
   }
 
   saveUser(){
     debugger
-    this.http.post('https://api.freeprojectapi.com/api/Survey/register',this.userObj).subscribe({
+    this.http.post('http://localhost:8086/api/v0/patients',this.userObj).subscribe({
       next:(result)=>{
         debugger
         alert("User created Sucessfully");
@@ -48,6 +50,57 @@ export class User implements OnInit{
         alert("Error -" +error);
       }
     })
+  }
+
+  onEdit(item:any){
+    this.userObj=item;
+  }
+
+
+  updateUser() {
+    debugger;
+    this.http.put(`http://localhost:8086/api/v0/patients/${this.userObj.id}`, this.userObj).subscribe({
+      next: () => {
+        debugger;
+        alert("Updated Success");
+        this.getUsers();
+      },
+      error: (error) => {
+        debugger;
+        alert("Error - " + error.error);
+      }
+    });
+  }
+
+
+  onReset(){
+    this.userObj={
+
+      "id":0,
+
+      "name": "",
+      "age": "",
+      "prescription": " ",
+      "blood": " "
+
+    }
+  }
+
+  onDelete(id:number){
+    debugger
+
+    this.http.delete(`http://localhost:8086/api/v0/patients/${id}`).subscribe({
+      next: () => {
+        debugger
+        alert("Deleted Successfully");
+        this.getUsers();
+      },
+      error: (error) => {
+        debugger
+        alert("Error - " + error.error);
+      }
+    });
+
   }
 
 

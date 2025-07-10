@@ -16,10 +16,11 @@
         <thead>
 <tr>
 
-  <th>Full Name</th>
-  <th>Email</th>
-  <th>Password</th>
-  <th>Moblie Number</th>
+  <th>Name</th>
+  <th>Age</th>
+  <th>Prescription</th>
+  <th>Blood</th>
+  <th>Action</th>
 </tr>
 
 
@@ -33,10 +34,12 @@
             @for (item of userList; track $index){
 
              <tr>
-               <td>{{ item.fullName }}</td>
-              <td>{{ item.emailId }}</td>
-             <td>{{ item.password }}</td>
-              <td>{{ item.mobileNo }}</td>
+               <td>{{ item.name }}</td>
+              <td>{{ item.age }}</td>
+             <td>{{ item.prescription }}</td>
+              <td>{{ item.blood }}</td>
+               <button class="btn btn-primary btn-sm" (click)="onEdit(item)">Edit</button>
+               <button (click)="onDelete(item.id)" class="btn btn-danger btn-sm">Delete</button>
              </tr>
 
             }
@@ -67,25 +70,16 @@
         <div class="row">
 
           <div class="col-7">
-            <label for="" >Full Name</label>
-            <input type="text"  [(ngModel)]="userObj.fullName" class="form-control">
+            <label  > Name</label>
+            <input type="text"  [(ngModel)]="userObj.name" class="form-control">
 
 
 
           </div>
 
           <div class="col-7">
-            <label for="" >Email</label>
-            <input type="text" [ngModel]="userObj.emailId" class="form-control">
-
-
-
-          </div>
-
-
-          <div class="col-7">
-            <label for="" >Password</label>
-            <input type="text" [ngModel]="userObj.password" class="form-control">
+            <label  >Age</label>
+            <input type="text" [(ngModel)]="userObj.age" class="form-control">
 
 
 
@@ -93,8 +87,17 @@
 
 
           <div class="col-7">
-            <label for="" >Mobile Number</label>
-            <input type="text" [ngModel]="userObj.mobileNo" class="form-control">
+            <label >Prescription</label>
+            <input type="text" [(ngModel)]="userObj.prescription" class="form-control">
+
+
+
+          </div>
+
+
+          <div class="col-7">
+            <label  >Blood</label>
+            <input type="text" [(ngModel)]="userObj.blood" class="form-control">
 
 
 
@@ -103,10 +106,22 @@
 
         </div>
 
-        <div class="row">
+        <div class="row pt-3">
+          <div class="col-6 text-center">
+            <button (click)="onReset()" class="btn btn-secondary">Reset</button>
+          </div>
 
-          <div class="col-6">
-            <button (click)="saveUser()" class="bg-success">Save</button>
+          <div class="col-6 text-center">
+            {{userObj.id}}
+            @if (userObj.id== 0) {
+
+              <button (click)="saveUser()" class="bg-success">Save</button>
+
+            }@else{
+              <button (click)="updateUser()" class="bg-warning">Update</button>
+            }
+
+
           </div>
 
         </div>
