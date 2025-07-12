@@ -67,11 +67,25 @@
 
       </div>
       <div class="card-body">
+
+        <form  #formValue="ngForm">
+
         <div class="row">
 
           <div class="col-7">
             <label  > Name</label>
-            <input type="text"  [(ngModel)]="userObj.name" class="form-control">
+            <input type="text"  #names="ngModel" required [(ngModel)]="userObj.name" name="name" class="form-control">
+
+            @if (names.touched){
+
+            <div class="text-danger">
+              @if(names.errors?.['required']){
+                <span>This is Required</span>
+              }
+            </div>
+
+            }
+
 
 
 
@@ -79,8 +93,23 @@
 
           <div class="col-7">
             <label  >Age</label>
-            <input type="text" [(ngModel)]="userObj.age" class="form-control">
+            <input type="text" #ages="ngModel" required minlength="4" [(ngModel)]="userObj.age" name="age" class="form-control">
 
+            <div class="text-danger">
+
+              @if (ages.errors?.['required']) {
+
+              <span>This is required</span>
+              }
+
+              @if (ages.errors?.['minlength']) {
+
+
+              <span>Min 4 Char</span>
+
+              }
+
+            </div>
 
 
           </div>
@@ -88,7 +117,29 @@
 
           <div class="col-7">
             <label >Prescription</label>
-            <input type="text" [(ngModel)]="userObj.prescription" class="form-control">
+            <input type="text" #prescriptions="ngModel"  pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required minlength="4" [(ngModel)]="userObj.prescription" name="prescription" class="form-control">
+            <div class="text-danger">
+
+
+              @if (prescriptions.errors?.['required']) {
+
+              <span>This is required</span>
+              }
+
+              @if (prescriptions.errors?.['minlength']) {
+              <span>Min 4 Char</span>
+
+              }
+
+              @if(prescriptions.errors?.['pattern']){
+
+                <span>Valid is Required</span>
+
+              }
+
+
+            </div>
+
 
 
 
@@ -97,7 +148,20 @@
 
           <div class="col-7">
             <label  >Blood</label>
-            <input type="text" [(ngModel)]="userObj.blood" class="form-control">
+            <input type="text" #bloods="ngModel" required minlength="4" [(ngModel)]="userObj.blood" name="blood" class="form-control">
+            <div class="text-danger">
+
+              @if (bloods.errors?.['required']) {
+              <span>This is required</span>
+              }
+
+              @if (bloods.errors?.['minlength']) {
+
+              <span>Min 4 Char</span>
+
+              }
+
+            </div>
 
 
 
@@ -106,16 +170,21 @@
 
         </div>
 
+        </form>
+
         <div class="row pt-3">
           <div class="col-6 text-center">
             <button (click)="onReset()" class="btn btn-secondary">Reset</button>
           </div>
 
           <div class="col-6 text-center">
+
+            {{formValue.invalid}}
+
             {{userObj.id}}
             @if (userObj.id== 0) {
 
-              <button (click)="saveUser()" class="bg-success">Save</button>
+              <button (click)="saveUser()" [disabled]="formValue.invalid" class="bg-success">Save</button>
 
             }@else{
               <button (click)="updateUser()" class="bg-warning">Update</button>

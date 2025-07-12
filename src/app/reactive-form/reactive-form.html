@@ -11,21 +11,112 @@
             <div class="col-7">
               <label>Name</label>
               <input type="text" formControlName="name" class="form-control" />
+              @if(userObj.controls['name'].touched){
+
+                <div class="text-danger">
+
+
+                @if(userObj.controls['name'].errors?.['required']){
+
+                  <span>This Is Required</span>
+
+                }
+
+
+
+                </div>
+
+              }
             </div>
 
             <div class="col-7">
               <label>Age</label>
               <input type="text" formControlName="age" class="form-control" />
+
+              @if(userObj.controls['name'].touched){
+
+                <div class="text-danger">
+
+
+                  @if(userObj.controls['age'].errors?.['required']){
+
+                    <span>This Is Required</span>
+
+                  }
+
+                  @if(userObj.controls['age'].errors?.['minLength']){
+                    <span>Min 5 char is required</span>
+
+                  }
+
+                </div>
+
+              }
+
+
+
+
             </div>
 
             <div class="col-7">
               <label>Prescription</label>
               <input type="text" formControlName="prescription" class="form-control" />
+
+              @if(userObj.controls['prescription'].touched){
+
+                <div class="text-danger">
+
+
+                  @if(userObj.controls['prescription'].errors?.['required']){
+
+                    <span>This Is Required</span>
+
+                  }
+
+                  @if(userObj.controls['prescription'].errors?.['minLength']){
+                    <span>Min 5 char is required</span>
+
+                  }
+
+                  @if(userObj.controls['prescription'].errors?.['email']){
+                    <span>Valid</span>
+
+                  }
+
+                </div>
+
+              }
+
+
             </div>
 
             <div class="col-7">
               <label>Blood</label>
               <input type="text" formControlName="blood" class="form-control" />
+              @if(userObj.controls['prescription'].touched){
+
+                <div class="text-danger">
+
+
+                  @if(userObj.controls['blood'].errors?.['required']){
+
+                    <span>This Is Required</span>
+
+                  }
+
+                  @if(userObj.controls['blood'].errors?.['minLength']){
+                    <span>Min 5 char is required</span>
+
+                  }
+
+
+
+                </div>
+
+              }
+
+
+
             </div>
           </div>
 
@@ -33,7 +124,7 @@
 
             <div class="col-6 text-center">
 
-                <button type="button" (click)="saveUser()" class="btn bg-success">Save</button>
+                <button type="button" [disabled]="userObj.invalid" (click)="saveUser()" class="btn bg-success">Save</button>
 
             </div>
           </div>

@@ -27,7 +27,7 @@ export class User implements OnInit{
 
   ngOnInit() {
     this.getUsers();
-    this.saveUser();
+
   }
 
 
@@ -92,7 +92,7 @@ export class User implements OnInit{
     this.http.delete(`http://localhost:8086/api/v0/patients/${id}`).subscribe({
       next: () => {
         debugger
-        alert("Deleted Successfully");
+        // alert("Deleted Successfully");
         this.getUsers();
       },
       error: (error) => {
