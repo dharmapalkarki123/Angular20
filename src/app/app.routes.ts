@@ -1,4 +1,5 @@
-import { Routes } from '@angular/router';
+import
+{ Routes } from '@angular/router';
 import {Signal} from './signal/signal';
 import {Databinding} from './databinding/databinding';
 import {Controlflow} from './controlflow/controlflow';
@@ -6,6 +7,7 @@ import {AttributeDirectives} from './attribute-directives/attribute-directives';
 import {ApiGet} from './api-get/api-get';
 import {User} from './user/user';
 import {ReactiveForm} from './reactive-form/reactive-form';
+import {Pipe} from './pipe/pipe';
 
 export const routes: Routes = [
   {path:"signals", component:Signal},
@@ -14,6 +16,7 @@ export const routes: Routes = [
   {path:"directive", component:AttributeDirectives},
   {path:"api",component:ApiGet},
   {path:"user",component:User},
-  {path:"reactiveForm",component:ReactiveForm}
+  {path:"reactiveForm",component:ReactiveForm},
+  {path:"pipe",component:Pipe}
 
 ];

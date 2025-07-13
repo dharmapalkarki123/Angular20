@@ -1,0 +1,25 @@
+
+<div class="row">
+  <div class="col-3">
+
+    <p>UpperCase=> {{courseName|uppercase}}</p>
+
+    <p>LowerCase=>{{courseDuration|lowercase}}</p>
+
+    <p>Student=> {{student|slice:0:3}}</p>
+    <p>Student=> {{student|slice:2}}</p>
+    <p>Titlecase=>{{title|titlecase}}</p>
+
+
+    <p>Student Information=> {{studentObj|json}}</p>
+
+    <div class="col-3">
+
+      name:{{studentObj.name|na}}
+      address:{{studentObj.address |na}}
+
+    </div>
+
+
+  </div>
+</div>
