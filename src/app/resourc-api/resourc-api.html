@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-3">
+    {{userData.hasValue()}}
+    {{userData.value()}}
+    {{userData.isLoading}}
+  </div>
+</div>
+
+<div class="col-3">
+  @for(item of userData.value(); track $index){
+
+    <li>{{item.name}}</li>
+    <li>{{item.username}}</li>
+
+
+  }
+</div>
+
+
+
+<div class="row">
+  <div class="col-3">
+    {{userList.hasValue()}}
+    {{userList.value()}}
+  </div>
+</div>
+
+<div class="col-3">
+  @for(item of userList.value(); track $index){
+
+    <li>{{item.name}}</li>
+    <li>{{item.username}}</li>
+
+
+  }
+</div>

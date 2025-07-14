@@ -8,6 +8,7 @@ import {ApiGet} from './api-get/api-get';
 import {User} from './user/user';
 import {ReactiveForm} from './reactive-form/reactive-form';
 import {Pipe} from './pipe/pipe';
+import {ResourcApi} from './resourc-api/resourc-api';
 
 export const routes: Routes = [
   {path:"signals", component:Signal},
@@ -17,6 +18,7 @@ export const routes: Routes = [
   {path:"api",component:ApiGet},
   {path:"user",component:User},
   {path:"reactiveForm",component:ReactiveForm},
-  {path:"pipe",component:Pipe}
+  {path:"pipe",component:Pipe},
+  {path:"resourceApi", component:ResourcApi}
 
 ];
