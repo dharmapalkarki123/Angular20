@@ -1,10 +1,14 @@
 import {inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class Master {
+
+
+  onLogin:Subject<boolean>=new Subject<boolean>();
 
   http =inject(HttpClient)
 

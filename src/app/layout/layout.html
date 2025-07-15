@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Left-aligned nav links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="signals">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="data">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="control">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="directive">Directive</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="api">GETAPI</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="user">User</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="reactiveForm">Reactive</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="pipe">Pipe</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="resourceApi">ResourceApi</a>
+        </li>
+      </ul>
+
+      <!-- Right-aligned Login button -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+
+          @if(loggegedUserName==" "){
+            <a class="btn btn-outline-light" routerLink="login">Login</a>
+
+          }@else{
+
+            <a class="btn btn-outline-light" routerLink="login">{{loggegedUserName}}</a>
+            <a class="btn btn-outline-light" (click)="loggOf()" routerLink="login">LoggedOff</a>
+
+          }
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

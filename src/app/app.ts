@@ -3,6 +3,7 @@ import {RouterLink, RouterOutlet} from '@angular/router';
 import {Databinding} from './databinding/databinding';
 import {Signal} from './signal/signal';
 import {Controlflow} from './controlflow/controlflow';
+import {Master} from './master';
 
 @Component({
   selector: 'app-root',
@@ -12,4 +13,41 @@ import {Controlflow} from './controlflow/controlflow';
 })
 export class App {
   protected title = 'LearningAngular';
+
+  // loggegedUserName=" "
+  // constructor(private masterService:Master) {
+  //
+  //   this.readLogged()
+  //   this.masterService.onLogin.subscribe(res=>{
+  //     this.readLogged()
+  //   })
+  //
+  //
+  // }
+  //
+  // readLogged(){
+  //
+  //   const loggedData=localStorage.getItem("Angular20");
+  //
+  //   if(loggedData !=null){
+  //
+  //     this.loggegedUserName=loggedData;
+  //
+  //   }
+  //
+  //
+  //
+  // }
+  //
+  // loggOf(){
+  //
+  //   localStorage.removeItem("Angular20")
+  //   this.readLogged();
+  //   this.loggegedUserName=' ';
+  //
+  //
+  // }
+
+
+
 }
