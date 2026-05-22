@@ -11,6 +11,8 @@ import {Pipe} from './pipe/pipe';
 import {ResourcApi} from './resourc-api/resourc-api';
 import {Login} from './login/login';
 import {Layout} from './layout/layout';
+import {ModalPopup} from './modal-popup/modal-popup';
+import {SidePanel} from './side-panel/side-panel';
 
 export const routes: Routes = [
 
@@ -37,7 +39,9 @@ export const routes: Routes = [
       {path:"user",component:User},
       {path:"reactiveForm",component:ReactiveForm},
       {path:"pipe",component:Pipe},
-      {path:"resourceApi", component:ResourcApi}
+      {path:"resourceApi", component:ResourcApi},
+      {path:"modalpop",component:ModalPopup},
+      {path:"side",component:SidePanel}
 
 
     ]
