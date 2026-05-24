@@ -1,111 +1,182 @@
-<div class="container mt-3">
-  <div class="row">
+<div class="row">
 
-    <!-- User List Card -->
-    <div class="col-12" [ngClass]="isSidePanelOpen ? 'col-7' : 'col-12'">
+  <!-- User List Card -->
+  <div class="col-8" [ngClass]="isSidePanelOpen() ? 'col-8' : 'col-12'">
 
-      <div class="card">
-        <div class="card-header d-flex justify-content-between align-items-center">
-          <h5>User List</h5>
+    <div class="card">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h5>User List</h5>
 
-          <button class="btn btn-primary" (click)="openSidePanel()">
-            Add New
-          </button>
-        </div>
+        <button class="btn btn-primary" (click)="openSidePanel()">
+          Add New
+        </button>
+      </div>
 
-        <div class="card-body">
-          <table class="table table-bordered">
-            <thead>
-            <tr>
-              <th>Sr</th>
-              <th>Name</th>
-              <th>User</th>
-              <th>Email</th>
-            </tr>
-            </thead>
+      <div class="card-body">
+        <table class="table table-bordered">
+          <thead>
+          <tr>
+            <th>Sr</th>
+            <th>Name</th>
+            <th>User</th>
+            <th>Email</th>
+          </tr>
+          </thead>
 
-            <tbody>
-            <tr>
-              <td>111</td>
-              <td>111</td>
-              <td>111</td>
-              <td>111</td>
-            </tr>
-
-            <tr>
-              <td>222</td>
-              <td>222</td>
-              <td>222</td>
-              <td>222</td>
-            </tr>
-
-            <tr>
-              <td>333</td>
-              <td>333</td>
-              <td>333</td>
-              <td>333</td>
-            </tr>
-
-            <tr>
-              <td>444</td>
-              <td>444</td>
-              <td>444</td>
-              <td>444</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
+          <tbody>
+          <tr><td>111</td><td>111</td><td>111</td><td>111</td></tr>
+          <tr><td>222</td><td>222</td><td>222</td><td>222</td></tr>
+          <tr><td>333</td><td>333</td><td>333</td><td>333</td></tr>
+          <tr><td>444</td><td>444</td><td>444</td><td>444</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
-    <!-- Side Panel -->
-    @if (isSidePanelOpen) {
-      <div class="col-5">
-        <div class="card">
+  </div>
 
-          <div class="card-header d-flex justify-content-between align-items-center">
-            <h5>New User</h5>
+  <!-- Side Panel -->
+  @if (isSidePanelOpen()) {
+    <div class="col-4">
 
-            <div>
-              <button class="btn btn-danger btn-sm" (click)="closeSidePanel()">
-                Close
-              </button>
+      <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h5>New User</h5>
 
-              <button class="btn btn-success btn-sm">
-                Save
-              </button>
+          <div>
+            <button class="btn btn-danger btn-sm" (click)="closeSidePanel()">
+              Close
+            </button>
+
+            <button class="btn btn-success btn-sm">
+              Save
+            </button>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="row">
+
+            <div class="col-12 mb-3">
+              <label>Name</label>
+              <input type="text" class="form-control">
             </div>
+
+            <div class="col-12 mb-3">
+              <label>User Name</label>
+              <input type="text" class="form-control">
+            </div>
+
+            <div class="col-12 mb-3">
+              <label>Email</label>
+              <input type="text" class="form-control">
+            </div>
+
+            <div class="col-12 mb-3">
+              <label>Password</label>
+              <input type="password" class="form-control">
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  }
+
+</div>
+
+<hr>
+<hr>
+
+<div class="row">
+  @if (currentView()=='List'){
+
+      <div class="col-12" >
+
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h5>User List</h5>
+
+            <button class="btn btn-primary" (click)="toggleView()">
+              Add New
+            </button>
           </div>
 
           <div class="card-body">
-            <div class="row">
+            <table class="table table-bordered">
+              <thead>
+              <tr>
+                <th>Sr</th>
+                <th>Name</th>
+                <th>User</th>
+                <th>Email</th>
+              </tr>
+              </thead>
 
-              <div class="col-12 mb-3">
-                <label>Name</label>
-                <input type="text" class="form-control">
-              </div>
-
-              <div class="col-12 mb-3">
-                <label>User Name</label>
-                <input type="text" class="form-control">
-              </div>
-
-              <div class="col-12 mb-3">
-                <label>Email</label>
-                <input type="text" class="form-control">
-              </div>
-
-              <div class="col-12 mb-3">
-                <label>Password</label>
-                <input type="password" class="form-control">
-              </div>
-
-            </div>
+              <tbody>
+              <tr><td>111</td><td>111</td><td>111</td><td>111</td></tr>
+              <tr><td>222</td><td>222</td><td>222</td><td>222</td></tr>
+              <tr><td>333</td><td>333</td><td>333</td><td>333</td></tr>
+              <tr><td>444</td><td>444</td><td>444</td><td>444</td></tr>
+              </tbody>
+            </table>
           </div>
+        </div>
 
+      </div>
+
+
+  } @else {
+    <div class="col-12">
+
+      <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h5>New User</h5>
+
+          <div>
+            <button class="btn btn-outline-danger btn-sm" (click)="toggleView()">
+              Close
+            </button>
+
+            <button class="btn btn-success btn-sm">
+              Save
+            </button>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="row">
+
+            <div class="col-12 mb-3">
+              <label>Name</label>
+              <input type="text" class="form-control">
+            </div>
+
+            <div class="col-12 mb-3">
+              <label>User Name</label>
+              <input type="text" class="form-control">
+            </div>
+
+            <div class="col-12 mb-3">
+              <label>Email</label>
+              <input type="text" class="form-control">
+            </div>
+
+            <div class="col-12 mb-3">
+              <label>Password</label>
+              <input type="password" class="form-control">
+            </div>
+
+          </div>
         </div>
       </div>
-    }
 
-  </div>
+    </div>
+  }
+
+
 </div>
+
+
+

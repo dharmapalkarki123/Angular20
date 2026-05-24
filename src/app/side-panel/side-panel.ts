@@ -9,7 +9,9 @@ import {NgClass} from '@angular/common';
 })
 export class SidePanel {
 
-  isSidePanelOpen: WritableSignal<boolean>=signal<boolean>(true);
+  isSidePanelOpen: WritableSignal<boolean>=signal<boolean>(false);
+
+  currentView=signal<string>('List')
 
   openSidePanel(){
     this.isSidePanelOpen.set(true);
@@ -18,6 +20,12 @@ export class SidePanel {
   closeSidePanel(){
 
     this.isSidePanelOpen.set(false)
+
+  }
+
+  toggleView(){
+
+    this.currentView.set(this.currentView()=='List'?'Form':'List')
 
   }
 
