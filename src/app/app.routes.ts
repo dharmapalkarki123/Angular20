@@ -13,6 +13,8 @@ import {Login} from './login/login';
 import {Layout} from './layout/layout';
 import {ModalPopup} from './modal-popup/modal-popup';
 import {SidePanel} from './side-panel/side-panel';
+import {TableForm} from './table-form/table-form';
+import {InlineTableCrud} from './inline-table-crud/inline-table-crud';
 
 export const routes: Routes = [
 
@@ -41,7 +43,9 @@ export const routes: Routes = [
       {path:"pipe",component:Pipe},
       {path:"resourceApi", component:ResourcApi},
       {path:"modalpop",component:ModalPopup},
-      {path:"side",component:SidePanel}
+      {path:"side",component:SidePanel},
+      {path:"tableForm",component:TableForm},
+      {path:"inline",component:InlineTableCrud}
 
 
     ]

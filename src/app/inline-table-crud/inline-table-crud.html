@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-12">
+    <button type=button class="btn-btn-primary" (click)="addNew()">Add New</button>
+    <button type=button class="btn-btn-warning" (click)="saveAll()">Save All</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>
+          <input  type="checkbox" (change)="selectAll($event)">
+        </th>
+        <th>Department Name</th>
+        <th>Department Logo</th>
+        <th>Action</th>
+
+      </tr>
+
+
+      </thead>
+      <tbody >
+      @for(item of depList(); track $index){
+
+
+        <tr>
+          <td>
+            <input type="checkbox" [checked]="getCheckedStatus(item.departmentId)" (change)="addCheckedItem($event,item.departmentId)">
+          </td>
+          <td> <input type="text" [(ngModel)]="item.departmentName" class="form-control" placeholder="Name"></td>
+          <td><input type="text" [(ngModel)]="item.departmentLogo" class="form-control" placeholder="Logo"></td>
+<!--          <td>{{item|json}}</td>-->
+        </tr>
+
+
+
+
+
+
+
+
+      }
+
+
+
+      </tbody>
+
+
+    </table>
+
+  </div>
+</div>
