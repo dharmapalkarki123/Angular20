@@ -1,0 +1,33 @@
+<div class="project-card">
+
+  <div class="header">
+
+    <div class="icon-box">
+      📁
+    </div>
+
+    <div class="title-section">
+      <div class="title-row">
+        <h2>{{topicName}}</h2>
+        <span class="badge">{{topicCategory}}</span>
+      </div>
+
+      <p>
+        {{subtitle}}
+      </p>
+    </div>
+
+  </div>
+
+  <div class="tags">
+
+    @for(item of topicList; track $index){
+      <span class="tag">{{item}}</span>
+    }
+
+
+
+
+  </div>
+
+</div>
