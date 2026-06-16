@@ -1,8 +1,9 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
+import {TopicInfo} from '../reusableComponent/topic-info/topic-info';
 
 @Component({
   selector: 'app-modal-popup',
-  imports: [],
+  imports: [TopicInfo],
   templateUrl: './modal-popup.html',
   styleUrl: './modal-popup.css'
 })

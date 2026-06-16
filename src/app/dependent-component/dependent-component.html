@@ -1,0 +1,149 @@
+<!--<app-topic-info [topicName]="'Dependent Drop Down'"-->
+<!--                [subtitle]="'How to achieve dynamic drop down'"-->
+<!--                [topicCategory]="'Drop Down'"-->
+<!--                [topicList]="['@If','@ViewChild','@EventBinding']"-->
+
+<!--&gt;-->
+
+<!--</app-topic-info>-->
+
+<div class="row">
+
+  <div class="col-4">
+
+    <div class="card">
+
+      <div class="card-header bg-warning">
+        <div class="row">
+          <div class="col-12">
+            Using Static Array
+          </div>
+
+
+        </div>
+
+
+
+      </div>
+
+      <div class="card-body">
+
+        <div class="row">
+
+          <div class="col-6">
+
+            <label >State</label>
+            <select class="form-select" (change)="onStateChange($event)">
+              <option value="">Select State</option>
+              @for (item of stateList;track $index){
+                <option [value]="item.stateId">{{item.stateName}}</option>
+
+              }
+
+
+            </select>
+
+
+
+          </div>
+
+          <div class="col-6">
+
+            <label>District</label>
+            <select class="form-select">
+              <option value="">Select City</option>
+              @for (item of filteredCityList;track $index){
+                <option [value]=item.cityId>{{item.cityName}}</option>
+
+              }
+
+
+            </select>
+
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+
+</div>
+
+
+<div class="row">
+
+  <div class="col-4">
+
+    <div class="card">
+
+      <div class="card-header bg-warning">
+        <div class="row">
+          <div class="col-12">
+            Using API
+          </div>
+
+
+        </div>
+
+
+
+      </div>
+
+      <div class="card-body">
+
+        <div class="row">
+
+          <div class="col-6">
+
+            <label >Department</label>
+            <select class="form-select" [(ngModel)]="depId" (change)="getDesignationById()">
+              <option value="">Select Department</option>
+              @for (item of deptList();track $index){
+                <option [value]="item.departmentId">{{item.departmentName}}</option>
+
+              }
+
+
+            </select>
+
+
+
+          </div>
+
+          <div class="col-6">
+
+            <label>Designation</label>
+            <select class="form-select">
+              <option value="">Select Designation</option>
+              @for (item of designationList();track $index){
+                <option [value]="item.designationId">{{item.designationName}}</option>
+
+              }
+
+
+            </select>
+
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+
+</div>

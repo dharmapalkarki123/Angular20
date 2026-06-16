@@ -1,9 +1,10 @@
 import {Component,WritableSignal, signal} from '@angular/core';
 import {NgClass} from '@angular/common';
+import {TopicInfo} from '../reusableComponent/topic-info/topic-info';
 
 @Component({
   selector: 'app-side-panel',
-  imports: [NgClass],
+  imports: [NgClass,TopicInfo],
   templateUrl: './side-panel.html',
   styleUrl: './side-panel.css'
 })

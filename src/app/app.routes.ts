@@ -15,6 +15,7 @@ import {ModalPopup} from './modal-popup/modal-popup';
 import {SidePanel} from './side-panel/side-panel';
 import {TableForm} from './table-form/table-form';
 import {InlineTableCrud} from './inline-table-crud/inline-table-crud';
+import {DependentComponent} from './dependent-component/dependent-component';
 
 export const routes: Routes = [
 
@@ -45,7 +46,8 @@ export const routes: Routes = [
       {path:"modalpop",component:ModalPopup},
       {path:"side",component:SidePanel},
       {path:"tableForm",component:TableForm},
-      {path:"inline",component:InlineTableCrud}
+      {path:"inline",component:InlineTableCrud},
+      {path:"dependentCop", component:DependentComponent}
 
 
     ]
