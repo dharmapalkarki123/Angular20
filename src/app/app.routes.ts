@@ -16,6 +16,7 @@ import {SidePanel} from './side-panel/side-panel';
 import {TableForm} from './table-form/table-form';
 import {InlineTableCrud} from './inline-table-crud/inline-table-crud';
 import {DependentComponent} from './dependent-component/dependent-component';
+import {PersistSelection} from './selection/persist-selection/persist-selection';
 
 export const routes: Routes = [
 
@@ -47,7 +48,8 @@ export const routes: Routes = [
       {path:"side",component:SidePanel},
       {path:"tableForm",component:TableForm},
       {path:"inline",component:InlineTableCrud},
-      {path:"dependentCop", component:DependentComponent}
+      {path:"dependentCop", component:DependentComponent},
+      {path:"selection",component:PersistSelection}
 
 
     ]

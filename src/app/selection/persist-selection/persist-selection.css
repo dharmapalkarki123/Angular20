@@ -1,0 +1,81 @@
+/* Background */
+:host {
+  display: block;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  min-height: 100vh;
+  color: #cbd5e1;
+}
+
+/* Card */
+.skill-card {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 18px;
+  border: 1px solid #1e293b;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Step Circle */
+.step {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-weight: bold;
+}
+
+/* Title */
+.title {
+  color: #67e8f9;
+}
+
+.subtitle {
+  color: #64748b;
+}
+
+/* Selected Badge */
+.selected-badge {
+  background: #022c22;
+  color: #34d399;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* Skill Chip */
+.skill-chip {
+  padding: 8px 16px;
+  border-radius: 25px;
+  background: #111827;
+  border: 1px solid #1f2937;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 14px;
+
+  color: #e2e8f0; /* ✅ FIX (light gray / near white) */
+}
+
+/* Hover effect */
+.skill-chip:hover {
+  border-color: #38bdf8;
+  transform: translateY(-2px);
+}
+
+/* Active */
+.skill-chip.active {
+  background: linear-gradient(135deg, #06b6d4, #0ea5e9);
+  color: white;
+  border: none;
+  box-shadow: 0 0 12px rgba(14, 165, 233, 0.6);
+}
+
+/* Hint */
+.hint {
+  border: 1px dashed #1e293b;
+  padding: 14px;
+  border-radius: 10px;
+  color: #64748b;
+}
