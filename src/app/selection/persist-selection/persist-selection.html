@@ -52,3 +52,58 @@
   </div>
 
 </div>
+
+
+<div class="container mt-4">
+
+  <!-- Filter Tabs -->
+  <div class="filter-tabs mb-4">
+    <button
+      class="tab-btn"
+      [class.active]="selectedFilter === 'ALL'"
+      (click)="filterData('ALL')">
+      All <span>{{employees.length}}</span>
+    </button>
+
+    <button class="tab-btn" (click)="filterData('FRONTEND')">Frontend</button>
+    <button class="tab-btn" (click)="filterData('BACKEND')">Backend</button>
+    <button class="tab-btn" (click)="filterData('DESIGN')">Design</button>
+    <button class="tab-btn" (click)="filterData('DEVOPS')">DevOps</button>
+  </div>
+
+  <!-- Table -->
+  <div class="table-container">
+    <table class="table custom-table">
+      <thead>
+      <tr>
+        <th>SN</th>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Team</th>
+        <th>Status</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let emp of filteredEmployees; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.role}}</td>
+
+        <td>
+            <span class="badge team" [ngClass]="emp.team.toLowerCase()">
+              {{emp.team}}
+            </span>
+        </td>
+
+        <td>
+            <span class="badge status" [ngClass]="emp.status.toLowerCase().replace(' ', '-')">
+              {{emp.status}}
+            </span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

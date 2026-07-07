@@ -26,4 +26,31 @@ export class PersistSelection {
   }
 
 
+
+  selectedFilter: string = 'ALL';
+
+  employees = [
+    { name: 'Riya Sharma', role: 'Angular Developer', team: 'FRONTEND', status: 'Active' },
+    { name: 'Arjun Mehta', role: 'Node.js Developer', team: 'BACKEND', status: 'Active' },
+    { name: 'Priya Nair', role: 'UI Designer', team: 'DESIGN', status: 'On Leave' },
+    { name: 'Rahul Verma', role: 'DevOps Engineer', team: 'DEVOPS', status: 'Active' },
+    { name: 'Sneha Pillai', role: 'React Developer', team: 'FRONTEND', status: 'Active' },
+    { name: 'Karan Joshi', role: 'Django Developer', team: 'BACKEND', status: 'Inactive' },
+    { name: 'Meera Reddy', role: 'UX Researcher', team: 'DESIGN', status: 'Active' },
+    { name: 'Amit Patil', role: 'Vue Developer', team: 'FRONTEND', status: 'Active' }
+  ];
+
+  filteredEmployees = [...this.employees];
+
+  filterData(team: string) {
+    this.selectedFilter = team;
+
+    if (team === 'ALL') {
+      this.filteredEmployees = this.employees;
+    } else {
+      this.filteredEmployees = this.employees.filter(emp => emp.team === team);
+    }
+  }
+
+
 }
