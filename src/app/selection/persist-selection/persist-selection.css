@@ -1,8 +1,8 @@
 /* Background */
 :host {
   display: block;
-  background: radial-gradient(circle at top, #0f172a, #020617);
   min-height: 100vh;
+  background: radial-gradient(circle at top, #0f172a, #020617);
   color: #cbd5e1;
 }
 
@@ -54,103 +54,103 @@
   cursor: pointer;
   transition: all 0.25s ease;
   font-size: 14px;
-
-  color: #e2e8f0; /* ✅ FIX (light gray / near white) */
+  color: #e2e8f0;
 }
 
-/* Hover effect */
 .skill-chip:hover {
   border-color: #38bdf8;
   transform: translateY(-2px);
 }
 
-/* Active */
 .skill-chip.active {
   background: linear-gradient(135deg, #06b6d4, #0ea5e9);
-  color: white;
+  color: #fff;
   border: none;
   box-shadow: 0 0 12px rgba(14, 165, 233, 0.6);
 }
 
-/* Hint */
-.hint {
-  border: 1px dashed #1e293b;
-  padding: 14px;
-  border-radius: 10px;
-  color: #64748b;
-}
-
-
-
-
-/* Dark Background */
-body {
-  background: #0f172a;
-}
-
-/* Tabs */
-.filter-tabs {
-  display: flex;
-  gap: 10px;
-}
-
-.tab-btn {
-  background: #1e293b;
-  color: #94a3b8;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.tab-btn.active,
-.tab-btn:hover {
-  background: #f59e0b;
-  color: #fff;
-}
-
-/* Table */
+/* Table Container */
 .table-container {
   background: #020617;
-  border-radius: 10px;
-  padding: 15px;
+  border-radius: 14px;
+  padding: 18px;
+  border: 1px solid #1e293b;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
 }
 
+/* Table Base */
 .custom-table {
+  width: 100%;
+  border-collapse: collapse;
   color: #e2e8f0;
 }
 
-.custom-table thead {
-  color: #64748b;
+/* Remove Bootstrap white styles */
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-striped-bg: transparent;
+  --bs-table-hover-bg: transparent;
+  background-color: transparent;
 }
 
-.custom-table tbody tr {
+.table th,
+.table td {
+  color: #e2e8f0;
+}
+
+/* Header */
+.custom-table thead th {
+  color: #38bdf8;
+  font-weight: 600;
   border-bottom: 1px solid #1e293b;
+  padding: 12px;
+}
+
+/* Rows */
+.custom-table tbody tr {
+  background: #020617;
+  transition: all 0.25s ease;
+}
+
+.custom-table tbody tr:hover {
+  background: #0f172a;
+}
+
+/* Cells */
+.custom-table td {
+  padding: 12px;
+  border-bottom: 1px solid #1e293b;
+}
+
+/* Hover text highlight */
+.custom-table tbody tr:hover td {
+  color: #67e8f9;
 }
 
 /* Badges */
 .badge {
-  padding: 5px 12px;
+  padding: 6px 14px;
   border-radius: 20px;
   font-size: 12px;
+  font-weight: 500;
+  color: #fff;
 }
 
 /* Team Colors */
 .frontend {
-  background: #0ea5e9;
+  background: linear-gradient(135deg, #06b6d4, #0ea5e9);
 }
 
 .backend {
-  background: #8b5cf6;
+  background: linear-gradient(135deg, #7c3aed, #8b5cf6);
 }
 
 .design {
-  background: #ec4899;
+  background: linear-gradient(135deg, #ec4899, #f472b6);
 }
 
 .devops {
-  background: #f97316;
+  background: linear-gradient(135deg, #f97316, #fb923c);
 }
 
 /* Status Colors */
@@ -164,4 +164,30 @@ body {
 
 .on-leave {
   background: #eab308;
+}
+
+/* Row Hover Effect (RESTORE) */
+.custom-table tbody tr {
+  transition: all 0.25s ease;
+}
+
+.custom-table tbody tr:hover {
+  background: #0f172a;
+  transform: scale(1.01);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+/* Make text glow slightly on hover */
+.custom-table tbody tr:hover td {
+  color: #67e8f9;
+}
+
+.custom-table {
+  border-collapse: separate !important;
+  border-spacing: 0 6px; /* adds spacing so hover effect is visible */
+}
+
+.custom-table tbody tr:hover {
+  background: linear-gradient(90deg, #0f172a, #020617);
 }
