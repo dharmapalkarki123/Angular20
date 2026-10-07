@@ -17,6 +17,9 @@ import {TableForm} from './table-form/table-form';
 import {InlineTableCrud} from './inline-table-crud/inline-table-crud';
 import {DependentComponent} from './dependent-component/dependent-component';
 import {PersistSelection} from './selection/persist-selection/persist-selection';
+import {RxjsBasic} from './Rxjs/rxjs-basic/rxjs-basic';
+import {RxjsOperator} from './Rxjs/rxjs-operator/rxjs-operator';
+import {SunBehReplay} from './Rxjs/sun-beh-replay/sun-beh-replay';
 
 export const routes: Routes = [
 
@@ -49,7 +52,10 @@ export const routes: Routes = [
       {path:"tableForm",component:TableForm},
       {path:"inline",component:InlineTableCrud},
       {path:"dependentCop", component:DependentComponent},
-      {path:"selection",component:PersistSelection}
+      {path:"selection",component:PersistSelection},
+      {path:"rxjsBasic",component:RxjsBasic},
+      {path:"rxjsOperator",component:RxjsOperator},
+      {path:"SubBeh",component:SunBehReplay}
 
 
     ]

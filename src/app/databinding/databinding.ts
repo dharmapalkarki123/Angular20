@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {Master} from '../services/master';
 
 @Component({
   selector: 'app-databinding',
@@ -8,6 +9,19 @@ import {FormsModule} from '@angular/forms';
   styleUrl: './databinding.css'
 })
 export class Databinding {
+
+  userService=inject(Master)
+  constructor() {
+
+    this.userService.$roleBehaviour.subscribe((res:string)=>{
+      debugger;
+    })
+
+    this.userService.$roleSub.subscribe((res:string)=>{
+      debugger;
+    })
+  }
+
 
   name:String="Dharmapal Karki"
   Age:number=12;

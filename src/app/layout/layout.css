@@ -1,0 +1,14 @@
+.navbar-nav {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.navbar-nav::-webkit-scrollbar {
+  height: 4px;
+}
+
+.navbar-nav::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
