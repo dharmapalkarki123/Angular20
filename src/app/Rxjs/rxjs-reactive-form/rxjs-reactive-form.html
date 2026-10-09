@@ -1,0 +1,148 @@
+//<p>rxjs-reactive-form works!</p>
+<div class="form-container">
+
+  <input type="text" placeholder="search" [formControl]="searchControl" ]>
+  <h2>User Registration Form</h2>
+
+  <form [formGroup]="userForm">
+
+    <!-- Name -->
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        id="name"
+        type="text"
+        formControlName="name"
+        placeholder="Enter your name"
+      >
+
+      @if (userForm.get('name')?.invalid && userForm.get('name')?.touched) {
+        <small>Name is required</small>
+      }
+    </div>
+
+
+    <!-- Subscribe -->
+    <div class="checkbox-group">
+      <input
+        id="subscribe"
+        type="checkbox"
+        formControlName="subscribe"
+      >
+
+      <label for="subscribe">Subscribe to newsletter</label>
+    </div>
+
+
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        formControlName="email"
+        placeholder="Enter your email"
+      >
+
+      @if (userForm.get('email')?.invalid && userForm.get('email')?.touched) {
+        <small>Email is required</small>
+      }
+    </div>
+
+
+    <!-- Password -->
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        formControlName="password"
+        placeholder="Enter your password"
+      >
+
+      @if (userForm.get('password')?.invalid && userForm.get('password')?.touched) {
+        <small>Password is required</small>
+      }
+    </div>
+
+
+    <!-- Confirm Password -->
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input
+        id="confirmPassword"
+        type="password"
+        formControlName="confirmPassword"
+        placeholder="Confirm your password"
+      >
+
+      @if (userForm.get('confirmPassword')?.invalid &&
+      userForm.get('confirmPassword')?.touched) {
+        <small>Confirm password is required</small>
+      }
+    </div>
+
+
+    <!-- Age -->
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input
+        id="age"
+        type="number"
+        formControlName="age"
+        placeholder="Enter your age"
+      >
+    </div>
+
+
+    <!-- Driving Licence -->
+    <div class="form-group">
+      <label for="drivingLicence">Driving Licence</label>
+
+      <select id="drivingLicence" formControlName="drivingLicence">
+        <option value="">Select option</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+    </div>
+
+
+    <!-- Country -->
+    <div class="form-group">
+      <label for="country">Country</label>
+
+      <select id="country" formControlName="country">
+        <option value="">Select country</option>
+        <option value="nepal">Nepal</option>
+        <option value="india">India</option>
+        <option value="australia">Australia</option>
+        <option value="new-zealand">New Zealand</option>
+        <option value="canada">Canada</option>
+        <option value="usa">USA</option>
+      </select>
+    </div>
+
+
+    <!-- Search -->
+    <div class="form-group">
+      <label for="search">Search</label>
+      <input
+        id="search"
+        type="text"
+        formControlName="search"
+        placeholder="Search..."
+      >
+    </div>
+
+
+    <!-- Buttons -->
+    <div class="button-group">
+      <button type="submit">Submit</button>
+      <button type="button" class="reset-btn" (click)="userForm.reset()">
+        Reset
+      </button>
+    </div>
+
+  </form>
+
+</div>

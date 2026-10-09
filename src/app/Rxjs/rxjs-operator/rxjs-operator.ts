@@ -1,5 +1,18 @@
 import {Component, inject} from '@angular/core';
-import {filter, forkJoin, from, interval, map, of, take} from 'rxjs';
+import {
+  concatMap,
+  exhaustMap,
+  filter,
+  forkJoin,
+  from,
+  interval,
+  map,
+  mergeMap,
+  of,
+  Subject,
+  switchMap,
+  take
+} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {Master} from '../../services/master';
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
@@ -28,20 +41,63 @@ export class RxjsOperator {
 
   searchControl=new FormControl()
 
+  LoginBtn$=new Subject<void>()
+
   constructor() {
+
+
+
+      this.LoginBtn$.pipe(exhaustMap(()=>{
+        return this.http.get("http://jsonplaceholder.typicode.com/users")})).subscribe((res:any)=>{
+        console.log(res)
+      })
+
 
     const user$= this.http.get("http://jsonplaceholder.typicode.com/users")
     const post$=this.http.get("http://jsonplaceholder.typicode.com/pos")
 
+    // this.searchControl.valueChanges.subscribe((search:string)=>{
+    //  debugger;
+    //   this.http.get("https://dummyjson.com/products/search?q="+search).subscribe((res:any)=>{
+    //     console.log("user" +res);
+    //   })
+    //
+    //
+    //
+    // })
+
+
+    //switchMap
+    // this.searchControl.valueChanges.pipe(switchMap((search:string)=>this.http.get("https://dummyjson.com/products/search?q=\"+search"))
+    // ).subscribe((res:any)=>{
+    //   console.log(res)
+    // })
+
+
+
+    //mergemap consider latest call only
+    // this.searchControl.valueChanges.pipe(mergeMap((search:string)=>this.http.get("https://dummyjson.com/products/search?q=\"+search"))
+    // ).subscribe((res:any)=>{
+    //   console.log(res)
+    // })
+
+
+
+    //compete previous one and goes for next ie latest call
+    this.searchControl.valueChanges.pipe(concatMap((search:string)=>this.http.get("https://dummyjson.com/products/search?q=\"+search"))
+    ).subscribe((res:any)=>{
+      console.log(res)
+    })
+
 
     forkJoin([user$,post$]).subscribe((res:any)=>{
-      debugger;
+      // debugger;
     },error=>{
-      debugger
+      // debugger
     })
 
     forkJoin([this.districtData$,this.cityData$]).subscribe((res:any)=>{
-      debugger
+      // debugger
     })
 
     this.timeInterval$.pipe(
@@ -89,6 +145,12 @@ export class RxjsOperator {
 
 
 
+  }
+
+  btnClick(){
+
+
+    this.LoginBtn$.next();
   }
 
 

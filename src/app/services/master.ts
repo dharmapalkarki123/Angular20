@@ -20,7 +20,7 @@ export class Master {
   getUsers(){
     return  this.http.get("https://jsonplaceholder.typicode.com/users").pipe(
       tap((userList=>{
-        debugger;
+        // debugger;
       })),
       map((userList:any)=>userList.map((user:any)=>{
         return {

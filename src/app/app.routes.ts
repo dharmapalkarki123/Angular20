@@ -20,6 +20,7 @@ import {PersistSelection} from './selection/persist-selection/persist-selection'
 import {RxjsBasic} from './Rxjs/rxjs-basic/rxjs-basic';
 import {RxjsOperator} from './Rxjs/rxjs-operator/rxjs-operator';
 import {SunBehReplay} from './Rxjs/sun-beh-replay/sun-beh-replay';
+import {RxjsReactiveForm} from './Rxjs/rxjs-reactive-form/rxjs-reactive-form';
 
 export const routes: Routes = [
 
@@ -55,7 +56,8 @@ export const routes: Routes = [
       {path:"selection",component:PersistSelection},
       {path:"rxjsBasic",component:RxjsBasic},
       {path:"rxjsOperator",component:RxjsOperator},
-      {path:"SubBeh",component:SunBehReplay}
+      {path:"SubBeh",component:SunBehReplay},
+      {path:"rjxReactiveForm",component:RxjsReactiveForm}
 
 
     ]
