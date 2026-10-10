@@ -75,6 +75,7 @@
         formControlName="confirmPassword"
         placeholder="Confirm your password"
       >
+      <div *ngIf="passwordMismatch" class="text-danger">Password Dont match</div>
 
       @if (userForm.get('confirmPassword')?.invalid &&
       userForm.get('confirmPassword')?.touched) {
